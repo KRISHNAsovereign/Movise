@@ -1,0 +1,31 @@
+<% layout('layout/boilerplate') %>
+
+<section class="mainpage"> 
+<div class="box">
+  <div class="head">
+    <h2>All  Movies</h2>
+    <p class="text-right"><a href="./index">Back to Top 5 Recommended</a></p>
+  </div>
+
+  <% for (const movie of allMovies) { %>
+    <div class="movie">
+      <div class="movie-image">
+        <% if (movie.posterImageUrl) { %>
+          <span class="play"><span class="name"><%= movie.title %></span></span>
+          <a href="#"><img src="<%= movie.posterImageUrl %>" alt="<%= movie.title %> Poster" /></a>
+        <% } else { %>
+          <div class="no-poster">No Poster Available</div>
+        <% } %>
+      </div>
+      <div class="rating">
+        <p>RATING</p>
+        <div class="stars">
+          <div class="stars-in"></div>
+        </div>
+        <span class="comments"><%= movie.rating %></span>
+      </div>
+    </div>
+  <% } %>
+  <div class="cl">&nbsp;</div>
+</div>
+</section>

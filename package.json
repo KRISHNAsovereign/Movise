@@ -1,0 +1,28 @@
+{
+  "name": "scrapping",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "cheerio": "^1.0.0-rc.10",
+    "ejs": "^3.1.5",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-layouts": "^1.0.0",
+    "express-session": "^1.17.3",
+    "html": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-nodemon": "^2.5.0"
+  },
+  "scripts": {
+    "start:flask": "python flask\\app_1.py",
+    "start:node": "nodemon app.js",
+    "start:both": "concurrently \"npm run start:flask\" \"npm run start:node\"",
+    "start:pm2": "pm2 start app.js"
+  }
+}
